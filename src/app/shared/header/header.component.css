@@ -1,0 +1,30 @@
+header {
+  background-color: #292b30;
+  padding: 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 500;
+  width: 100%;
+  position: fixed;
+}
+
+.top-header {
+  color: rgb(210, 210, 210);
+  display: grid;
+  align-items: center;
+}
+#top-header {
+  display: grid;
+  align-items: center;
+}
+.btn-secondary {
+  border-radius: 10px;
+}
+
+#dropdownMenuButton1 {
+  margin: 10px 0;
+  font-size: 13px
+}
+
+#logout {
+  cursor: pointer;
+}

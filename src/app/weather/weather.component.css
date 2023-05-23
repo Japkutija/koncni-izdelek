@@ -1,0 +1,454 @@
+  * {
+    outline: 1px solid red;
+  }
+
+  /* .bg-image {
+    background-image: url('https://www.travelandleisure.com/thmb/zFpjulihpXjpUV7gKNHzydvJANA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vienna-austria-VIENNATG0621-ecb0ee926c2d49c4bce610db594f7405.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: calc(100vh - 101.6px);
+    opacity: 0.8;
+  } */
+
+  .bg-video {
+    position: fixed;
+    /* The background stays where it is. */
+    top: 1;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .bg-video video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .city-search {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 400;
+    margin-top: 100px;
+    /* Bring it to the front */
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    .city-search {
+      margin-top: 100px;
+    }
+  }
+
+  .container {
+    /* position: relative; */
+    /* z-index: 22; */
+
+  }
+
+  #city-info {
+    /* margin-top: 15px; */
+  }
+
+  #city-info-detail {
+    border-style: dashed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .city-info-detail {
+    display: table;
+    width: 100%;
+  }
+
+  .city-info-detail-row {
+    display: table-row;
+  }
+
+  .cell {
+    display: inline-flex;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height: 150px;
+    width: 230px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: silver;
+    font-weight: bold;
+  }
+
+  .city-name {
+    display: flex;
+    justify-content: center;
+  }
+
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 8 / 22;
+
+  }
+
+  .div2 {
+    grid-area: 1 / 1 / 8 / 8;
+    background-color: #ffffff;
+    margin: 15px 0px 0px 15px;
+    border-radius: 40px 0px 0px 40px;
+
+  }
+
+  .div3 {
+    grid-area: 1 / 8 / 8 / 22;
+    border-radius: 0px 40px 40px 0px;
+    background-color: #f6f6f8;
+    margin-top: 15px;
+    margin-right: 15px;
+    padding: 15px;
+  }
+
+  .div4 {
+    grid-area: 1 / 1 / 2 / 8;
+    margin: 15px;
+    padding: 15px;
+    justify-content: center;
+    display: flex;
+    margin: 31px 15px -14px 15px;
+  }
+
+  .div5 {
+    grid-area: 1 / 8 / 2 / 22;
+    margin: 15px;
+  }
+
+  .div6 {
+    grid-area: 2 / 8 / 4 / 22;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .div7 {
+    grid-area: 2 / 8 / 4 / 10;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 13px;
+    width: 70px;
+  }
+
+  .div8 {
+    grid-area: 2 / 10 / 4 / 12;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 100px;
+    font-size: 13px;
+  }
+
+  .div9 {
+    grid-area: 2 / 12 / 4 / 14;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 70px;
+
+  }
+
+  .premium-members {
+    padding: 13px;
+    font-size: 12px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    font-weight: bold;
+  }
+
+  .div10 {
+    grid-area: 2 / 14 / 4 / 16;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 70px;
+  }
+
+  
+  .div11 {
+    grid-area: 2 / 16 / 4 / 18;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 70px;
+  }
+
+  .div12 {
+    grid-area: 2 / 18 / 4 / 20;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 70px;
+  }
+
+  .div13 {
+    grid-area: 2 / 20 / 4 / 22;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 70px;
+  }
+
+  .div14 {
+    grid-area: 3 / 8 / 4 / 12;
+    margin-top: 15px;
+    margin-left: 30px;
+    height: 25px;
+    font-weight: 700;
+    margin-top: 50px;
+  }
+
+  .div15 {
+    grid-area: 4 / 8 / 8 / 22;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .div16 {
+    grid-area: 2 / 1 / 6 / 8;
+    margin: 15px;
+    padding: 15px;
+    display: inline-block;
+    overflow: hidden;
+
+  }
+
+  .div16 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .div16>div:first-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  .div17 {
+    grid-area: 5 / 1 / 8 / 8;
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+  }
+
+  .div17 img {
+    height: 100px;
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
+  .div18 {
+    grid-area: 4 / 8 / 6 / 12;
+    background-color: #ffffff;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+  }
+
+  .div19 {
+    grid-area: 6 / 8 / 8 / 12;
+    background-color: #ffffff;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .div19>div:first-child {
+    margin-top: 15px;
+  }
+
+  .div19>div:first-child h2 {
+    display: inline-block;
+  }
+
+  .div19>div:first-child p {
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .div20 {
+    grid-area: 4 / 13 / 6 / 17;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .div20>div:first-child {
+    margin-top: 15px;
+  }
+
+  .div20>div:first-child h2 {
+    display: inline-block;
+  }
+
+  .div20>div:first-child p {
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .div21 {
+    grid-area: 6 / 13 / 8 / 17;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .div21>div:first-child {
+    margin-top: 15px;
+  }
+
+  .div21>div:first-child h2 {
+    display: inline-block;
+  }
+
+  .div21>div:first-child p {
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .div22 {
+    grid-area: 4 / 18 / 6 / 22;
+    background-color: #ffffff;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .div22>div:first-child {
+    margin-top: 15px;
+  }
+
+  .div22>div:first-child h2 {
+    display: inline-block;
+  }
+
+  .div22>div:first-child p {
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .div23 {
+    grid-area: 6 / 18 / 8 / 22;
+    background-color: #ffffff;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .div23>div:first-child {
+    margin-top: 15px;
+  }
+
+  .div23>div:first-child h2 {
+    display: inline-block;
+  }
+
+  .div23>div:first-child p {
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .weather_temperature {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+  }
+
+  .weather_temperature_degrees {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  .weatherDate {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-control {
+    width: 80%;
+    border: none;
+  }
+
+  .search-button {
+    height: 38px;
+    border: none;
+    background-color: transparent;
+
+  }
+
+  .forecast-div {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 40px;
+  }
+
+  .forecast-icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .forecast-min-temp {
+    font-weight: 100;
+    color: #b9b9b9;
+  }
+
+  #condition {
+    width: 200px;
+  }

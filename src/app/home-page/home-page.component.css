@@ -1,0 +1,51 @@
+  /* .bg-image {
+    background-image: url('https://www.travelandleisure.com/thmb/zFpjulihpXjpUV7gKNHzydvJANA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vienna-austria-VIENNATG0621-ecb0ee926c2d49c4bce610db594f7405.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: calc(100vh - 101.6px);
+    opacity: 0.8;
+  } */
+
+  .bg-video {
+    position: fixed;
+    /* The background stays where it is. */
+    top: 1;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .bg-video video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .city-search {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    margin-top: 200px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 9999;
+    /* Bring it to the front */
+  }
+
+  @media (max-width: 767px) {
+    .city-search {
+      margin-top: 100px;
+    }
+  }
+
+  .container {
+    /* position: relative; */
+    /* z-index: 22; */
+
+  }
+
+  #city-info {
+    margin-top: 15px;
+  }

@@ -1,0 +1,21 @@
+<div class="d-flex h-100 align-items-center justify-content-center">
+
+    <form *ngIf="showLogin || showSignup" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <br>
+        <div formGroupName="userData">
+            <div class="form-group">
+                <label for="email" class="">E-mail: </label>
+                <input type="email" id="email" name="email" class="form-control" formControlName="email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" class="form-control" formControlName="password">
+            </div>
+            <button *ngIf="showLogin" type="submit" class="btn btn-primary" id="loginButton">Login</button>
+            <button *ngIf="showSignup" type="submit" class="btn btn-primary" id="loginButton">Signup</button>
+            <p id="switchButtons" *ngIf="!showSignup" class="lead" (click)="switchToSignup()">New user? Signup here!</p>
+            <p id="switchButtons" *ngIf="!showLogin" class="lead" (click)="switchToLogin()">Already an existing user? Login here!</p>
+        </div>
+    </form>
+</div>

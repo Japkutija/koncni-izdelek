@@ -1,0 +1,152 @@
+<body>
+    <video autoplay muted loop class="bg-video">
+        <source src="http://127.0.0.1:8887/backgroundvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="city-search">
+                    <div *ngIf="data" id="city-info">
+                        <h5 class="city-name">City name: {{ data.location.name}}</h5>
+                        <br>
+                        <!-- <div class="city-info-detail">
+                            <div class="city-info-detail-row">
+                                <div class="cell"> Condition: {{data.current.condition.text}} </div>
+                                <div class="cell" style="transform: translateY(25px);"><img [src]="data.current.condition.icon"></div>
+                                <div class="cell"> Temperature: {{data.current.temp_c}}°C </div>
+                                <div class="cell">Feels like: {{data.current.feelslike_c}}°C </div>
+                            </div>
+                            <div class="city-info-detail-row">
+                                <div class="cell"> Humidity: {{data.current.humidity}} g/kg</div>
+                                <div class="cell">Wind speed: {{ data.current.wind_kph }} kph</div>
+                                <div class="cell">Precipitation: {{data.current.precip_mm}} mm</div>
+                                <div class="cell">Last updated: {{data.current.last_updated}}</div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="parent">
+                            <div class="div1"> </div>
+                            <div class="div2"> Temperature: {{data.current.temp_c}}°C </div>
+                            <div class="div3"> </div>
+                            <div class="div4"> </div>
+                            <div class="div5"> </div>
+                            <div class="div6"> </div>
+                            <div class="div7"> </div>
+                            <div class="div8"> </div>
+                            <div class="div9"> </div>
+                            <div class="div10"> </div>
+                            <div class="div11"> </div>
+                            <div class="div12"> <img [src]="data.current.condition.icon"></div>
+                            <div class="div13"> Wind speed: {{ data.current.wind_kph }} kph</div>
+                            <div class="div14"> Precipitation: {{data.current.precip_mm}} mm</div>
+                            <div class="div15"> Feels like: {{data.current.feelslike_c}}°C </div>
+                            <div class="div16"> Last updated: {{data.current.last_updated}}</div>
+                            <div class="div17"> Humidity: {{data.current.humidity}} g/kg</div>
+                        </div> -->
+
+                        <div class="parent">
+                            <div class="div1"> </div>
+                            <div class="div2"> </div>
+                            <div class="div3"> kmet</div>
+
+                            <div class="div4">
+
+                                <input type="text" class="form-control" id="" placeholder="Search for places"
+                                    name="city-weather" [(ngModel)]="updatedCityInput"
+                                    (keyup.enter)="retrieveWeatherData()">
+                                <button class="search-button" type="submit" (click)="retrieveWeatherData()">🔍</button>
+
+                            </div>
+
+                            <div class="div5"> kmet</div>
+                            <div class="div6"> kmet</div>
+                            <div class="div7">
+                                <div class="forecast-div"> {{forecast[1].name}} </div> <img [src]="forecast[1].icon"
+                                    class="forecast-icon">
+                                <div> {{forecast[1].max_temp}}° <span
+                                        class="forecast-min-temp">{{forecast[1].min_temp}}° </span></div>
+                            </div>
+                            <div class="div8">
+                                <div class="forecast-div"> {{forecast[2].name}} </div> <img [src]="forecast[2].icon"
+                                    class="forecast-icon">
+                                <div> {{forecast[2].max_temp}}° <span
+                                        class="forecast-min-temp">{{forecast[2].min_temp}}° </span></div>
+                            </div>
+                            <div class="div9"> <div class="premium-members">Only for premium members!</div>  </div>
+                            <div class="div10"> <div class="premium-members">Only for premium members!</div></div>
+                            <div class="div11"> <div class="premium-members">Only for premium members!</div></div>
+                            <div class="div12"> <div class="premium-members">Only for premium members!</div></div>
+                            <div class="div13"> <div class="premium-members">Only for premium members!</div></div>
+                            <div class="div14"> Today's highlights: </div>
+                            <div class="div15"> kmet</div>
+                            <div class="div16">
+                                <div> <img [src]="data.current.condition.icon"> </div>
+                                <div>
+                                <div class="weather_temperature"> {{data.current.temp_c}} <p
+                                        class="weather_temperature_degrees">°C</p>
+                                </div>
+                            </div>
+                                <div class="weatherDate"> {{ formattedDate }}</div>
+                            </div>
+                            <div class="div17">
+                                <div id="condition">Condition: {{data.current.condition.text}} </div>
+                                <div><img src="https://i.imgur.com/iMNPQUy.png" alt=""></div>
+                            </div>
+                            <div class="div18"> UV Index: {{ data.current.uv }}</div>
+                            <div class="div19"> Wind speed:
+                                <div>
+                                    <h2>{{ data.current.wind_kph }}</h2>
+                                    <p>kph</p>
+                                    <div> {{windLevel}} </div>
+                                </div>
+
+
+                            </div>
+                            <div class="div20"> Humidity:
+                                <div>
+                                    <h2>{{data.current.humidity}} </h2>
+                                    <p>%</p>
+                                    <div> {{humidityLevel}} </div>
+                                </div>
+                            </div>
+                            <div class="div21"> Visibility:
+                                <div>
+                                    <h2>{{ data.current.vis_km }}</h2>
+                                    <p>km</p>
+                                    <div> {{visibility}} </div>
+                                </div>
+                            </div>
+                            <div class="div22"> Pressure:
+                                <div>
+                                    <h2>{{ data.current.pressure_mb }}</h2>
+                                    <p>mb</p>
+                                    <div> {{pressure}} </div>
+                                </div>
+
+                            </div>
+                            <div class="div23">Precipitation:
+                                <div>
+                                    <h2>{{ data.current.precip_mm }}</h2>
+                                    <p>mm</p>
+                                    <div> {{precipitation}} </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <app-weather [data]="data"></app-weather> -->
+                </div>
+                <!-- <p>Country: {{data.location.country}}</p>
+                            <p>Weather condition: {{ data.current.condition.text}}</p>
+                            <p>Temperature: {{data.current.feelslike_c}}°C</p>
+                            <p>Humidity: {{data.current.humidity}}</p>
+                            <p>Wind: {{data.current.gust_kph}}</p>
+                            <p>Wind: {{data.current.gust_kph}}</p>
+                            <p>Wind: {{data.current.gust_kph}}</p>
+                            <p>Wind: {{data.current.gust_kph}}</p> -->
+            </div>
+        </div>
+    </div>
+</body>
