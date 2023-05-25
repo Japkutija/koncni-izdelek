@@ -48,19 +48,22 @@
                         <div class="parent">
                             <div class="div1"> </div>
                             <div class="div2"> </div>
-                            <div class="div3"> kmet</div>
+                            <div class="div3"> </div>
 
                             <div class="div4">
-
-                                <input type="text" class="form-control" id="" placeholder="Search for places"
-                                    name="city-weather" [(ngModel)]="updatedCityInput"
-                                    (keyup.enter)="retrieveWeatherData()">
-                                <button class="search-button" type="submit" (click)="retrieveWeatherData()">🔍</button>
+                                <form name="citySearch" #cityForm="ngForm">
+                                    <input type="text" class="form-control" id="" placeholder="Search for places"
+                                        name="city-weather" [(ngModel)]="updatedCityInput"
+                                        (keyup.enter)="retrieveWeatherData()" required #citySearch="ngModel">
+                                    <span *ngIf="!citySearch.valid && citySearch.touched" class="cityError"> Enter a valid city name! </span>
+                                </form>
+                                <button class="search-button" type="submit" (click)="retrieveWeatherData()"
+                                    [disabled]="!cityForm.valid">🔍</button>
 
                             </div>
 
-                            <div class="div5"> kmet</div>
-                            <div class="div6"> kmet</div>
+                            <div class="div5"> Forecast for the next days: </div>
+                            <div class="div6"> </div>
                             <div class="div7">
                                 <div class="forecast-div"> {{forecast[1].name}} </div> <img [src]="forecast[1].icon"
                                     class="forecast-icon">
@@ -103,20 +106,18 @@
                                 <div id="condition">Condition: {{data.current.condition.text}} </div>
                                 <div><img src="https://i.imgur.com/iMNPQUy.png" alt=""></div>
                             </div>
-                            <div class="div18"><span class="weather-label-info">UV index:</span> 
+                            <div class="div18"><span class="weather-label-info">UV index:</span>
                                 <div>
-                                <ngx-gauge id="gauge" [max]="12" [value]="data.current.uv" [cap]="'round'"
-                                    [label]="'UV Index'" [size]="150"
-                                    [thick]="12"
-                                    [thresholds]="[{ value: 3, color: '#00CC00' }, { value: 6, color: '#FFCC00' }, { value: 11, color: '#FF0000' }]"
-                                    style="color: #FFCC00;"
-                                    [margin]="15"
-                                    [markers]="markerConfig">>
-                                </ngx-gauge>
-                            </div>
+                                    <ngx-gauge id="gauge" [max]="12" [value]="data.current.uv" [cap]="'round'"
+                                        [label]="'UV Index'" [size]="150" [thick]="12"
+                                        [thresholds]="getThresholdsColors()" style="color: #000000;" [margin]="15"
+                                        [markers]="markerConfig">>
+                                    </ngx-gauge>
+                                </div>
                             </div>
 
-                            <div class="div19"> <span class="weather-label-info">Wind speed</span> 
+                            <div class="div19">
+                                <span class="weather-label-info">Wind speed</span>
                                 <div>
                                     <h2>{{ data.current.wind_kph }}</h2>
                                     <p>kph</p>
@@ -125,21 +126,21 @@
 
 
                             </div>
-                            <div class="div20"> Humidity:
+                            <div class="div20"> <span class="weather-label-info">Humidity</span>
                                 <div>
                                     <h2>{{data.current.humidity}} </h2>
                                     <p>%</p>
                                     <div> {{humidityLevel}} </div>
                                 </div>
                             </div>
-                            <div class="div21"> Visibility:
+                            <div class="div21"> <span class="weather-label-info">Visibility</span>
                                 <div>
                                     <h2>{{ data.current.vis_km }}</h2>
                                     <p>km</p>
                                     <div> {{visibility}} </div>
                                 </div>
                             </div>
-                            <div class="div22"> Pressure:
+                            <div class="div22"> <span class="weather-label-info">Pressure</span>
                                 <div>
                                     <h2>{{ data.current.pressure_mb }}</h2>
                                     <p>mb</p>
@@ -147,7 +148,7 @@
                                 </div>
 
                             </div>
-                            <div class="div23">Precipitation:
+                            <div class="div23"><span class="weather-label-info">Precipitation</span>
                                 <div>
                                     <h2>{{ data.current.precip_mm }}</h2>
                                     <p>mm</p>

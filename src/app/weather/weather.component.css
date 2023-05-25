@@ -39,11 +39,13 @@
     display: flex;
     justify-content: center;
   }
+
   #gauge {
     position: absolute;
     display: flex;
     margin-top: 10px;
   }
+
   @media (max-width: 767px) {
     .city-search {
       margin-top: 100px;
@@ -136,7 +138,9 @@
 
   .div5 {
     grid-area: 1 / 8 / 2 / 22;
-    margin: 15px;
+    margin: 36px 15px 15px 15px;
+    font-weight: 700;
+    padding: 15px;
   }
 
   .div6 {
@@ -207,7 +211,7 @@
     width: 70px;
   }
 
-  
+
   .div11 {
     grid-area: 2 / 16 / 4 / 18;
     background-color: #ffffff;
@@ -262,7 +266,7 @@
     padding: 15px;
     display: inline-block;
     overflow: hidden;
-
+    border-bottom: 1px solid black;
   }
 
   .div16 img {
@@ -298,12 +302,14 @@
     margin-bottom: 15px;
     border-radius: 15px;
     padding: 20px;
-    
+
   }
+
   .div18>div:first-child {
     display: flex;
     justify-content: center;
   }
+
   .div19 {
     grid-area: 6 / 8 / 8 / 12;
     background-color: #ffffff;
@@ -313,15 +319,15 @@
     padding: 20px;
   }
 
-  .div19>div:first-child {
+  .div19>div:nth-child(2) {
     margin-top: 15px;
   }
 
-  .div19>div:first-child h2 {
+  .div19>div:nth-child(2) h2 {
     display: inline-block;
   }
 
-  .div19>div:first-child p {
+  .div19>div:nth-child(2) p {
     display: inline-block;
     margin-left: 2px;
   }
@@ -334,15 +340,15 @@
     padding: 20px;
   }
 
-  .div20>div:first-child {
+  .div20>div:nth-child(2) {
     margin-top: 15px;
   }
 
-  .div20>div:first-child h2 {
+  .div20>div:nth-child(2) h2 {
     display: inline-block;
   }
 
-  .div20>div:first-child p {
+  .div20>div:nth-child(2) p {
     display: inline-block;
     margin-left: 2px;
   }
@@ -355,15 +361,15 @@
     padding: 20px;
   }
 
-  .div21>div:first-child {
+  .div21>div:nth-child(2) {
     margin-top: 15px;
   }
 
-  .div21>div:first-child h2 {
+  .div21>div:nth-child(2) h2 {
     display: inline-block;
   }
 
-  .div21>div:first-child p {
+  .div21>div:nth-child(2) p {
     display: inline-block;
     margin-left: 2px;
   }
@@ -377,15 +383,15 @@
     padding: 20px;
   }
 
-  .div22>div:first-child {
+  .div22>div:nth-child(2) {
     margin-top: 15px;
   }
 
-  .div22>div:first-child h2 {
+  .div22>div:nth-child(2) h2 {
     display: inline-block;
   }
 
-  .div22>div:first-child p {
+  .div22>div:nth-child(2) p {
     display: inline-block;
     margin-left: 2px;
   }
@@ -399,15 +405,15 @@
     padding: 20px;
   }
 
-  .div23>div:first-child {
+  .div23>div:nth-child(2) {
     margin-top: 15px;
   }
 
-  .div23>div:first-child h2 {
+  .div23>div:nth-child(2) h2 {
     display: inline-block;
   }
 
-  .div23>div:first-child p {
+  .div23>div:nth-child(2) p {
     display: inline-block;
     margin-left: 2px;
   }
@@ -416,7 +422,6 @@
     font-size: 50px;
     display: flex;
     justify-content: center;
-    width: 200px;
   }
 
   .weather_temperature_degrees {
@@ -461,8 +466,15 @@
   #condition {
     width: 200px;
   }
-  .weather-label-info{
+
+  .weather-label-info {
     color: rgb(153, 153, 153);
     overflow: hidden;
-    
+    white-space: nowrap;
+  }
+
+  .cityError {
+    width: 140px;
+    padding-left: 12px;
+    font-size: 13px;
   }

@@ -32,11 +32,11 @@ export class WeatherComponent implements OnInit {
   next_day_index: number = 1;
   markerConfig = {
     "0": { color: '#555', size: 1, label: '0', type: 'line' },
-    "2": { color: '#555', size: 4, label: '2',type: 'line' },
+    "2": { color: '#555', size: 4, label: '2', type: 'line' },
     "4": { color: '#555', size: 4, label: '4', type: 'line' },
-    "6": { color: '#555', size: 4, label: '6',type: 'line' },
+    "6": { color: '#555', size: 4, label: '6', type: 'line' },
     "8": { color: '#555', size: 1, label: '8', type: 'line' },
-    "10": { color: '#555', size: 4, label: '10',type: 'line' },
+    "10": { color: '#555', size: 4, label: '10', type: 'line' },
     "12": { color: '#555', size: 1, label: '12', type: 'line' },
   };
 
@@ -58,6 +58,26 @@ export class WeatherComponent implements OnInit {
       }
       );
   }
+  getThresholdsColors() {
+    const thresholds = [];
+    for (let i = 0; i <= 12; i++) {
+      let color;
+
+      if (i <= 3) {
+        color = '#00CC00';  // Green color for UV index <= 3
+      } else if (i <= 6) {
+        color = '#FFCC00';  // Yellow color for UV index <= 6
+      } else {
+        color = '#FF0000';  // Red color for UV index > 6
+      }
+
+      thresholds.push({ value: i, color });
+    }
+
+    return thresholds;
+  }
+
+
 
   checkHumidityLevel(humidity_level: number) {
     if (humidity_level >= 0 && humidity_level <= 30) {
