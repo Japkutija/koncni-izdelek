@@ -14,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './shared/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WeatherComponent } from './weather/weather.component';
+import { NgxGaugeModule } from 'ngx-gauge';
 // import { DropdownDirective } from './shared/placeholder/dropdown.directive';
 
 @NgModule({
@@ -34,7 +35,8 @@ import { WeatherComponent } from './weather/weather.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgxGaugeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -39,7 +39,11 @@
     display: flex;
     justify-content: center;
   }
-
+  #gauge {
+    position: absolute;
+    display: flex;
+    margin-top: 10px;
+  }
   @media (max-width: 767px) {
     .city-search {
       margin-top: 100px;
@@ -293,8 +297,13 @@
     margin-left: 30px;
     margin-bottom: 15px;
     border-radius: 15px;
+    padding: 20px;
+    
   }
-
+  .div18>div:first-child {
+    display: flex;
+    justify-content: center;
+  }
   .div19 {
     grid-area: 6 / 8 / 8 / 12;
     background-color: #ffffff;
@@ -451,4 +460,9 @@
 
   #condition {
     width: 200px;
+  }
+  .weather-label-info{
+    color: rgb(153, 153, 153);
+    overflow: hidden;
+    
   }

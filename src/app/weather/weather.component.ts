@@ -30,11 +30,21 @@ export class WeatherComponent implements OnInit {
   forecast_day = '';
   forecast_days: [] = [];
   next_day_index: number = 1;
+  markerConfig = {
+    "0": { color: '#555', size: 1, label: '0', type: 'line' },
+    "2": { color: '#555', size: 4, label: '2',type: 'line' },
+    "4": { color: '#555', size: 4, label: '4', type: 'line' },
+    "6": { color: '#555', size: 4, label: '6',type: 'line' },
+    "8": { color: '#555', size: 1, label: '8', type: 'line' },
+    "10": { color: '#555', size: 4, label: '10',type: 'line' },
+    "12": { color: '#555', size: 1, label: '12', type: 'line' },
+  };
 
   constructor(private weatherService: WeatherService, datePipe: DatePipe) {
     this.currentDate = new Date();
     this.formattedDate = datePipe.transform(this.currentDate, 'EEEE, HH:mm'); //Transform the time into the specific format
   }
+
   ngOnInit(): void {
     this.weatherService.fetchData() //fetch the City Data
       .subscribe(([currentData, forecastData]) => {
@@ -108,7 +118,7 @@ export class WeatherComponent implements OnInit {
   getForecastDays(next_day_index: number): string {
     let dateObj = new Date(); //Get a current date
     let day = dateObj.getDay() + next_day_index; //Get the current day (i.e. Monday = 1)
-    let dayName: string; 
+    let dayName: string;
 
     switch (day) {
       case 1:
@@ -149,9 +159,10 @@ export class WeatherComponent implements OnInit {
       this.forecast.push({ name: this.forecast_day, max_temp: max_temp, min_temp: min_temp, icon: icon }); //Save the forecast in the array
       this.next_day_index++;
     }
-    this.next_day_index = 1; 
+    this.next_day_index = 1;
     console.log(forecastData);
   }
+
 }
 
 

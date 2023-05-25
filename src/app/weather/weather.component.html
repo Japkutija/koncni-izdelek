@@ -73,28 +73,50 @@
                                 <div> {{forecast[2].max_temp}}° <span
                                         class="forecast-min-temp">{{forecast[2].min_temp}}° </span></div>
                             </div>
-                            <div class="div9"> <div class="premium-members">Only for premium members!</div>  </div>
-                            <div class="div10"> <div class="premium-members">Only for premium members!</div></div>
-                            <div class="div11"> <div class="premium-members">Only for premium members!</div></div>
-                            <div class="div12"> <div class="premium-members">Only for premium members!</div></div>
-                            <div class="div13"> <div class="premium-members">Only for premium members!</div></div>
+                            <div class="div9">
+                                <div class="premium-members">Only for premium members!</div>
+                            </div>
+                            <div class="div10">
+                                <div class="premium-members">Only for premium members!</div>
+                            </div>
+                            <div class="div11">
+                                <div class="premium-members">Only for premium members!</div>
+                            </div>
+                            <div class="div12">
+                                <div class="premium-members">Only for premium members!</div>
+                            </div>
+                            <div class="div13">
+                                <div class="premium-members">Only for premium members!</div>
+                            </div>
                             <div class="div14"> Today's highlights: </div>
                             <div class="div15"> kmet</div>
                             <div class="div16">
                                 <div> <img [src]="data.current.condition.icon"> </div>
                                 <div>
-                                <div class="weather_temperature"> {{data.current.temp_c}} <p
-                                        class="weather_temperature_degrees">°C</p>
+                                    <div class="weather_temperature"> {{data.current.temp_c}} <p
+                                            class="weather_temperature_degrees">°C</p>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="weatherDate"> {{ formattedDate }}</div>
                             </div>
                             <div class="div17">
                                 <div id="condition">Condition: {{data.current.condition.text}} </div>
                                 <div><img src="https://i.imgur.com/iMNPQUy.png" alt=""></div>
                             </div>
-                            <div class="div18"> UV Index: {{ data.current.uv }}</div>
-                            <div class="div19"> Wind speed:
+                            <div class="div18"><span class="weather-label-info">UV index:</span> 
+                                <div>
+                                <ngx-gauge id="gauge" [max]="12" [value]="data.current.uv" [cap]="'round'"
+                                    [label]="'UV Index'" [size]="150"
+                                    [thick]="12"
+                                    [thresholds]="[{ value: 3, color: '#00CC00' }, { value: 6, color: '#FFCC00' }, { value: 11, color: '#FF0000' }]"
+                                    style="color: #FFCC00;"
+                                    [margin]="15"
+                                    [markers]="markerConfig">>
+                                </ngx-gauge>
+                            </div>
+                            </div>
+
+                            <div class="div19"> <span class="weather-label-info">Wind speed</span> 
                                 <div>
                                     <h2>{{ data.current.wind_kph }}</h2>
                                     <p>kph</p>
